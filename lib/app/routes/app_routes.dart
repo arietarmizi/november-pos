@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pos/presentation/providers/products/password_provider.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../presentation/screens/account/about_screen.dart';
@@ -24,6 +25,9 @@ class AppRoutes {
   static final rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
   static final navNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'nav');
 
+  // New: A static variable to track if product access has been granted.
+  // static bool productAccessGranted = false;
+
   static final router = GoRouter(
     initialLocation: '/home',
     navigatorKey: rootNavigatorKey,
@@ -31,13 +35,11 @@ class AppRoutes {
       errorMessage: state.error?.message,
     ),
     redirect: (context, state) async {
-      // if isAuthenticated = false, go to sign-in screen
-      // else continue to current intended route screen
+      // If the user is not authenticated, go to sign-in screen.
       if (!await AuthService().isAuthenticated()) {
         return '/auth/sign-in';
-      } else {
-        return null;
       }
+      return null;
     },
     routes: [
       _main,
@@ -58,13 +60,11 @@ class AppRoutes {
   static final _auth = GoRoute(
     path: '/auth',
     redirect: (context, state) async {
-      // if isAuthenticated = false, go to intended route screen
-      // else back to main screen
-      if (!await AuthService().isAuthenticated()) {
-        return '/auth/sign-in';
-      } else {
+      // If the user is authenticated, redirect them to the home screen.
+      if (await AuthService().isAuthenticated()) {
         return '/home';
       }
+      return '/auth/sign-in';
     },
     routes: [
       _signIn,
@@ -83,20 +83,14 @@ class AppRoutes {
     builder: (BuildContext context, GoRouterState state, Widget child) {
       return MainScreen(child: child);
     },
-    redirect: (context, state) async {
-      // if isAuthenticated = true, go to intended route screen
-      // else return to auth screen
-      if (!await AuthService().isAuthenticated()) {
-        return '/auth';
-      } else {
-        return null;
-      }
-    },
+    // The redirect here is not needed since the root router already handles auth.
+    // routes are children of this shell
     routes: [
       _home,
       _products,
       _transactions,
       _account,
+      _productPassword
     ],
   );
 
@@ -111,16 +105,25 @@ class AppRoutes {
 
   static final _products = GoRoute(
     path: '/products',
-    pageBuilder: (context, state) {
-      return const NoTransitionPage<void>(
-        child: ProductsScreen(),
-      );
+    builder: (context, state) {
+      final passed = state.extra as bool? ?? false;
+      if (!passed) {
+        return const ProductPasswordScreen();
+      }
+      return const ProductsScreen();
     },
     routes: [
       _productCreate,
       _productEdit,
       _productDetail,
     ],
+  );
+
+  static final _productPassword = GoRoute(
+    path: '/product-password',
+    builder: (context, state) {
+      return const ProductPasswordScreen();
+    },
   );
 
   static final _transactions = GoRoute(
