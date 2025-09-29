@@ -13,7 +13,7 @@ abstract class TransactionRepository {
   Future<Result<void>> deleteTransaction(int transactionId);
 
   Future<Result<List<TransactionEntity>>> getUserTransactions(
-    String userId, {
+    String customerName, {
     String orderBy,
     String sortBy,
     int limit,

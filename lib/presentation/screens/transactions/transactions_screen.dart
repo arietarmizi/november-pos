@@ -123,17 +123,20 @@ class _TransactionsScreenState extends State<TransactionsScreen> {
   Widget searchField() {
     return AppTextField(
       controller: searchFieldController,
-      hintText: 'Search Transaction ID...',
+      hintText: 'Search Customer Name...',
       type: AppTextFieldType.search,
       textInputAction: TextInputAction.search,
       onEditingComplete: () {
         FocusScope.of(context).unfocus();
         transactionProvider.allTransactions = null;
-        transactionProvider.getAllTransactions(contains: searchFieldController.text);
+        transactionProvider.getAllTransactions(
+          customerName: searchFieldController.text, // <-- ganti dari contains
+        );
       },
       onTapClearButton: () {
-        transactionProvider.getAllTransactions(contains: searchFieldController.text);
+        transactionProvider.getAllTransactions();
       },
     );
   }
+
 }

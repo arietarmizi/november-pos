@@ -1,8 +1,8 @@
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
-import 'package:flutter_pos/data/datasources/remote/transaction_remote_datasource_impl.dart';
-import 'package:flutter_pos/data/models/ordered_product_model.dart';
-import 'package:flutter_pos/data/models/transaction_model.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:november_pos/data/datasources/remote/transaction_remote_datasource_impl.dart';
+import 'package:november_pos/data/models/ordered_product_model.dart';
+import 'package:november_pos/data/models/transaction_model.dart';
 
 void main() {
   group('TransactionRemoteDatasourceImpl', () {

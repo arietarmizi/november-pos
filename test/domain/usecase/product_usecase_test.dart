@@ -1,9 +1,9 @@
-import 'package:flutter_pos/core/errors/errors.dart';
-import 'package:flutter_pos/core/usecase/usecase.dart';
-import 'package:flutter_pos/domain/entities/product_entity.dart';
-import 'package:flutter_pos/domain/repositories/product_repository.dart';
-import 'package:flutter_pos/domain/usecases/params/base_params.dart';
-import 'package:flutter_pos/domain/usecases/product_usecases.dart';
+import 'package:november_pos/core/errors/errors.dart';
+import 'package:november_pos/core/usecase/usecase.dart';
+import 'package:november_pos/domain/entities/product_entity.dart';
+import 'package:november_pos/domain/repositories/product_repository.dart';
+import 'package:november_pos/domain/usecases/params/base_params.dart';
+import 'package:november_pos/domain/usecases/product_usecases.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';

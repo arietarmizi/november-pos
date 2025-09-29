@@ -1,7 +1,7 @@
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
-import 'package:flutter_pos/data/datasources/remote/product_remote_datasource_impl.dart';
-import 'package:flutter_pos/data/models/product_model.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:november_pos/data/datasources/remote/product_remote_datasource_impl.dart';
+import 'package:november_pos/data/models/product_model.dart';
 
 void main() {
   group('ProductRemoteDatasourceImpl', () {
@@ -58,15 +58,18 @@ void main() {
     });
 
     // Test: getAllUserProducts retrieves all products for a given user
-    test('getAllUserProducts retrieves all user products from the database', () async {
-      // Call the createProduct method
-      await datasource.createProduct(product);
+    test(
+      'getAllUserProducts retrieves all user products from the database',
+      () async {
+        // Call the createProduct method
+        await datasource.createProduct(product);
 
-      final res = await datasource.getAllUserProducts(userId);
+        final res = await datasource.getAllUserProducts(userId);
 
-      // Expect that the result is not empty
-      expect(res, isNotEmpty);
-    });
+        // Expect that the result is not empty
+        expect(res, isNotEmpty);
+      },
+    );
 
     // Test: deleteProduct deletes the product from the database
     test('deleteProduct deletes product from the database', () async {

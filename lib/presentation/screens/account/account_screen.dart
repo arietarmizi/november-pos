@@ -25,7 +25,7 @@ class AccountScreen extends StatelessWidget {
             user(context),
             profilButton(context),
             themeButton(context),
-            aboutButton(context),
+            // aboutButton(context),
             signOutButton(context),
           ],
         ),
@@ -164,42 +164,42 @@ class AccountScreen extends StatelessWidget {
     );
   }
 
-  Widget aboutButton(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: AppSizes.padding),
-      child: AppButton(
-        buttonColor: Theme.of(context).colorScheme.surface,
-        borderColor: Theme.of(context).colorScheme.surfaceContainer,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              children: [
-                const Icon(
-                  Icons.info_outline_rounded,
-                  size: 18,
-                ),
-                const SizedBox(width: AppSizes.padding / 1.5),
-                Text(
-                  'About',
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-            const Icon(
-              Icons.arrow_forward_ios_rounded,
-              size: 18,
-            ),
-          ],
-        ),
-        onTap: () {
-          context.go('/account/about');
-        },
-      ),
-    );
-  }
+  // Widget aboutButton(BuildContext context) {
+  //   return Padding(
+  //     padding: const EdgeInsets.only(top: AppSizes.padding),
+  //     child: AppButton(
+  //       buttonColor: Theme.of(context).colorScheme.surface,
+  //       borderColor: Theme.of(context).colorScheme.surfaceContainer,
+  //       child: Row(
+  //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //         children: [
+  //           Row(
+  //             children: [
+  //               const Icon(
+  //                 Icons.info_outline_rounded,
+  //                 size: 18,
+  //               ),
+  //               const SizedBox(width: AppSizes.padding / 1.5),
+  //               Text(
+  //                 'About',
+  //                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+  //                   fontWeight: FontWeight.bold,
+  //                 ),
+  //               ),
+  //             ],
+  //           ),
+  //           const Icon(
+  //             Icons.arrow_forward_ios_rounded,
+  //             size: 18,
+  //           ),
+  //         ],
+  //       ),
+  //       onTap: () {
+  //         context.go('/account/about');
+  //       },
+  //     ),
+  //   );
+  // }
 
   Widget signOutButton(BuildContext context) {
     return Padding(

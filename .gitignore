@@ -40,7 +40,8 @@ README.md
 # Secrets and env
 android/app/google-services.json
 lib/firebase_options.dart
-.firebase.json
+firebase.json
+firebase_.json
 .env
 
 # Symbolication related

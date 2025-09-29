@@ -12,7 +12,7 @@ abstract class TransactionDatasource {
   Future<List<TransactionModel>> getAllUserTransactions(String userId);
 
   Future<List<TransactionModel>> getUserTransactions(
-    String userId, {
+    String customerName, {
     String orderBy,
     String sortBy,
     int limit,

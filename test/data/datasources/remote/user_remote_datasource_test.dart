@@ -1,7 +1,7 @@
-import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
-import 'package:flutter_pos/data/datasources/remote/user_remote_datasource_impl.dart';
-import 'package:flutter_pos/data/models/user_model.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
+import 'package:november_pos/data/models/user_model.dart';
+import 'package:november_pos/data/datasources/remote/user_remote_datasource_impl.dart';
 
 void main() {
   group('UserRemoteDatasourceImpl', () {

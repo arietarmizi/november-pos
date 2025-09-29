@@ -54,8 +54,10 @@ class _AboutScreenState extends State<AboutScreen> {
               ),
               const SizedBox(height: AppSizes.padding),
               Text(
-                'Flutter POS',
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+                'November POS',
+                style: Theme.of(
+                  context,
+                ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
               ),
               Text(
                 packageName,
@@ -97,7 +99,7 @@ class _AboutScreenState extends State<AboutScreen> {
                   ),
                   const SizedBox(width: 4),
                   Text(
-                    "Elriz Wiraswara",
+                    "November POS",
                     textAlign: TextAlign.justify,
                     style: Theme.of(context).textTheme.labelSmall?.copyWith(
                       fontWeight: FontWeight.bold,
@@ -129,7 +131,9 @@ class _AboutScreenState extends State<AboutScreen> {
                     ],
                   ),
                   onTap: () {
-                    ExternalLauncher.openUrl('https://github.com/elrizwiraswara');
+                    ExternalLauncher.openUrl(
+                      'https://github.com/elrizwiraswara',
+                    );
                   },
                 ),
               ),

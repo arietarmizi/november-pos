@@ -1,8 +1,8 @@
-import 'package:flutter_pos/app/database/app_database.dart';
-import 'package:flutter_pos/data/datasources/local/transaction_local_datasource_impl.dart';
-import 'package:flutter_pos/data/models/ordered_product_model.dart';
-import 'package:flutter_pos/data/models/transaction_model.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:november_pos/app/database/app_database.dart';
+import 'package:november_pos/data/datasources/local/transaction_local_datasource_impl.dart';
+import 'package:november_pos/data/models/ordered_product_model.dart';
+import 'package:november_pos/data/models/transaction_model.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 void main() {
@@ -81,12 +81,15 @@ void main() {
     });
 
     // Test: getAllUserTransactions retrieves all transactions for a given user
-    test('getAllUserTransactions retrieves all user transactions from the database', () async {
-      final res = await datasource.getAllUserTransactions(userId);
+    test(
+      'getAllUserTransactions retrieves all user transactions from the database',
+      () async {
+        final res = await datasource.getAllUserTransactions(userId);
 
-      // Expect that the result is not empty
-      expect(res, isNotEmpty);
-    });
+        // Expect that the result is not empty
+        expect(res, isNotEmpty);
+      },
+    );
 
     // Test: deleteTransaction deletes the transaction from the database
     test('deleteTransaction deletes transaction from the database', () async {

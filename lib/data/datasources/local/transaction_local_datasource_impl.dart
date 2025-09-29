@@ -270,7 +270,7 @@ class TransactionLocalDatasourceImpl extends TransactionDatasource {
 
   @override
   Future<List<TransactionModel>> getUserTransactions(
-    String userId, {
+    String customerName, {
     String orderBy = 'createdAt',
     String sortBy = 'DESC',
     int limit = 10,
@@ -281,7 +281,7 @@ class TransactionLocalDatasourceImpl extends TransactionDatasource {
       var rawTransactions = await trx.query(
         AppDatabaseConfig.transactionTableName,
         where: 'createdById = ? AND id LIKE ?',
-        whereArgs: [userId, "%${contains ?? ''}%"],
+        whereArgs: [customerName, "%${contains ?? ''}%"],
         orderBy: '$orderBy $sortBy',
         limit: limit,
         offset: offset,

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pos/presentation/providers/products/password_provider.dart';
+import 'package:november_pos/presentation/providers/products/password_provider.dart';
 import 'package:go_router/go_router.dart';
 
+// import '../../presentation/providers/products/password_provider.dart';
 import '../../presentation/screens/account/about_screen.dart';
 import '../../presentation/screens/account/account_screen.dart';
 import '../../presentation/screens/account/profile_form_screen.dart';
@@ -85,13 +86,7 @@ class AppRoutes {
     },
     // The redirect here is not needed since the root router already handles auth.
     // routes are children of this shell
-    routes: [
-      _home,
-      _products,
-      _transactions,
-      _account,
-      _productPassword
-    ],
+    routes: [_home, _products, _transactions, _account, _productPassword],
   );
 
   static final _home = GoRoute(

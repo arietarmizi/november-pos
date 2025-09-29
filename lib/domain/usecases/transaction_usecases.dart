@@ -9,7 +9,8 @@ class SyncAllUserTransactionsUsecase extends UseCase<Result, String> {
   final TransactionRepository _transactionRepository;
 
   @override
-  Future<Result<int>> call(String params) async => _transactionRepository.syncAllUserTransactions(params);
+  Future<Result<int>> call(String params) async =>
+      _transactionRepository.syncAllUserTransactions(params);
 }
 
 class GetUserTransactionsUsecase extends UseCase<Result, BaseParams> {
@@ -36,7 +37,8 @@ class GetTransactionUsecase extends UseCase<Result, int> {
   final TransactionRepository _transactionRepository;
 
   @override
-  Future<Result<TransactionEntity>> call(int params) async => _transactionRepository.getTransaction(params);
+  Future<Result<TransactionEntity>> call(int params) async =>
+      _transactionRepository.getTransaction(params);
 }
 
 class CreateTransactionUsecase extends UseCase<Result, TransactionEntity> {
@@ -45,7 +47,8 @@ class CreateTransactionUsecase extends UseCase<Result, TransactionEntity> {
   final TransactionRepository _transactionRepository;
 
   @override
-  Future<Result<int>> call(TransactionEntity params) async => _transactionRepository.createTransaction(params);
+  Future<Result<int>> call(TransactionEntity params) async =>
+      _transactionRepository.createTransaction(params);
 }
 
 class UpateTransactionUsecase extends UseCase<Result<void>, TransactionEntity> {
@@ -54,7 +57,8 @@ class UpateTransactionUsecase extends UseCase<Result<void>, TransactionEntity> {
   final TransactionRepository _transactionRepository;
 
   @override
-  Future<Result<void>> call(TransactionEntity params) async => _transactionRepository.updateTransaction(params);
+  Future<Result<void>> call(TransactionEntity params) async =>
+      _transactionRepository.updateTransaction(params);
 }
 
 class DeleteTransactionUsecase extends UseCase<Result<void>, int> {
@@ -63,5 +67,6 @@ class DeleteTransactionUsecase extends UseCase<Result<void>, int> {
   final TransactionRepository _transactionRepository;
 
   @override
-  Future<Result<void>> call(int params) async => _transactionRepository.deleteTransaction(params);
+  Future<Result<void>> call(int params) async =>
+      _transactionRepository.deleteTransaction(params);
 }

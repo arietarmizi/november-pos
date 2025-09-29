@@ -6,9 +6,9 @@
 import 'dart:async' as _i5;
 import 'dart:ui' as _i6;
 
-import 'package:flutter_pos/core/usecase/usecase.dart' as _i3;
-import 'package:flutter_pos/domain/repositories/user_repository.dart' as _i2;
-import 'package:flutter_pos/presentation/providers/auth/auth_provider.dart'
+import 'package:november_pos/core/usecase/usecase.dart' as _i3;
+import 'package:november_pos/domain/repositories/user_repository.dart' as _i2;
+import 'package:november_pos/presentation/providers/auth/auth_provider.dart'
     as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 

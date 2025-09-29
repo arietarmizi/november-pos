@@ -15,14 +15,21 @@ class TransactionsProvider extends ChangeNotifier {
 
   bool isLoadingMore = false;
 
-  Future<void> getAllTransactions({int? offset, String? contains}) async {
+  Future<void> getAllTransactions({
+    int? offset,
+    String? contains,
+    String? customerName,
+  }) async {
     if (offset != null) {
       isLoadingMore = true;
       notifyListeners();
     }
 
-    var params = BaseParams(
-      param: AuthService().getAuthData()!.uid,
+    // tentukan apa yang diisi ke param
+    final String filterParam = customerName ?? AuthService().getAuthData()!.uid;
+
+    var params = BaseParams<String>(
+      param: filterParam,   // <-- selalu isi, tidak null
       offset: offset,
       contains: contains,
     );
@@ -35,11 +42,12 @@ class TransactionsProvider extends ChangeNotifier {
       } else {
         allTransactions?.addAll(res.data ?? []);
       }
-
-      isLoadingMore = false;
-      notifyListeners();
     } else {
       throw res.error?.message ?? 'Failed to load data';
     }
+
+    isLoadingMore = false;
+    notifyListeners();
   }
+
 }

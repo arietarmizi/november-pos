@@ -5,16 +5,16 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i4;
 
-import 'package:flutter_pos/app/services/connectivity/connectivity_service.dart'
+import 'package:november_pos/app/services/connectivity/connectivity_service.dart'
     as _i2;
-import 'package:flutter_pos/data/datasources/local/queued_action_local_datasource_impl.dart'
+import 'package:november_pos/data/datasources/local/queued_action_local_datasource_impl.dart'
     as _i8;
-import 'package:flutter_pos/data/datasources/local/user_local_datasource_impl.dart'
+import 'package:november_pos/data/datasources/local/user_local_datasource_impl.dart'
     as _i3;
-import 'package:flutter_pos/data/datasources/remote/user_remote_datasource_impl.dart'
+import 'package:november_pos/data/datasources/remote/user_remote_datasource_impl.dart'
     as _i7;
-import 'package:flutter_pos/data/models/queued_action_model.dart' as _i9;
-import 'package:flutter_pos/data/models/user_model.dart' as _i5;
+import 'package:november_pos/data/models/queued_action_model.dart' as _i9;
+import 'package:november_pos/data/models/user_model.dart' as _i5;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i6;
 

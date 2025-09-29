@@ -1,10 +1,10 @@
-import 'package:flutter_pos/app/services/connectivity/connectivity_service.dart';
-import 'package:flutter_pos/data/datasources/local/queued_action_local_datasource_impl.dart';
-import 'package:flutter_pos/data/datasources/local/user_local_datasource_impl.dart';
-import 'package:flutter_pos/data/datasources/remote/user_remote_datasource_impl.dart';
-import 'package:flutter_pos/data/models/user_model.dart';
-import 'package:flutter_pos/data/repositories/user_repository_impl.dart';
-import 'package:flutter_pos/domain/entities/user_entity.dart';
+import 'package:november_pos/app/services/connectivity/connectivity_service.dart';
+import 'package:november_pos/data/datasources/local/queued_action_local_datasource_impl.dart';
+import 'package:november_pos/data/datasources/local/user_local_datasource_impl.dart';
+import 'package:november_pos/data/datasources/remote/user_remote_datasource_impl.dart';
+import 'package:november_pos/data/models/user_model.dart';
+import 'package:november_pos/data/repositories/user_repository_impl.dart';
+import 'package:november_pos/domain/entities/user_entity.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';

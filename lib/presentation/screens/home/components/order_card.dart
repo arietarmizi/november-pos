@@ -89,7 +89,7 @@ class _OrderCardState extends State<OrderCard> {
                             ),
                             const SizedBox(width: 4),
                             Text(
-                              '/pcs',
+                              '/Ml',
                               style: Theme.of(context).textTheme.bodySmall?.copyWith(fontSize: 10),
                             ),
                           ],

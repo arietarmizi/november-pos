@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pos/app/routes/app_routes.dart';
-import 'package:flutter_pos/core/errors/errors.dart';
-import 'package:flutter_pos/core/usecase/usecase.dart';
-import 'package:flutter_pos/presentation/providers/auth/auth_provider.dart';
-import 'package:flutter_pos/presentation/screens/auth/sign_in/sign_in_screen.dart';
-import 'package:flutter_pos/service_locator.dart';
+import 'package:november_pos/app/routes/app_routes.dart';
+import 'package:november_pos/core/errors/errors.dart';
+import 'package:november_pos/core/usecase/usecase.dart';
+import 'package:november_pos/presentation/providers/auth/auth_provider.dart';
+import 'package:november_pos/presentation/screens/auth/sign_in/sign_in_screen.dart';
+import 'package:november_pos/service_locator.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -35,7 +35,7 @@ void main() {
     await tester.pumpWidget(makeTestableWidget(const SignInScreen()));
 
     expect(find.text('Welcome!'), findsOneWidget);
-    expect(find.text('Welcome to Flutter POS app'), findsOneWidget);
+    expect(find.text('Welcome to November POS app'), findsOneWidget);
     expect(find.text('Sign In With Google'), findsOneWidget);
   });
 

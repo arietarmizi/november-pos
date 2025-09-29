@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 
 class BaseParams<T> extends Equatable {
   final T? param;
+  final String? customerName;
   final String orderBy;
   final String sortBy;
   final int limit;
@@ -10,6 +11,7 @@ class BaseParams<T> extends Equatable {
 
   const BaseParams({
     this.param,
+    this.customerName,
     this.orderBy = 'createdAt',
     this.sortBy = 'DESC',
     this.limit = 10,

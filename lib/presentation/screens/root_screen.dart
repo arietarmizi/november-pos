@@ -36,7 +36,7 @@ class _RootScreenState extends State<RootScreen> {
             style: Theme.of(context).textTheme.displaySmall?.copyWith(fontWeight: FontWeight.bold),
           ),
           Text(
-            'Welcome to Flutter POS app',
+            'Welcome to November POS app',
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.bodyLarge,
           ),
